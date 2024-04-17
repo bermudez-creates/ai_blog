@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <title>Login</title>
+  </head>
+  <body class="flex flex-col min-h-screen bg-green-100 font-sans antialised">
+    <!-- Navbar Login Page -->
+    <nav class="bg-indigo-500 p-7 text-purple-200 flex justify-between">
+      <div>
+        <h1 class="3x-l font-bold">AI Blog Generator Login</h1>
+      </div>
+      <div>
+        <a href="signup.html" class="text-purple-100 hover:pointer">Signup</a>
+      </div>
+    </nav>
+    <!-- Navbar Login Page End -->
+    <br />
+    <!-- Main Content Login -->
+    <div class="flex items-center justify-center mt-20">
+      <div class="bg-gray-100 p-8 shadow-md rounded-lg max-w-md w-full">
+        <!-- Login Form  -->
+        <form class="space-y-4 text-indigo-500">
+          <h2 class="text-xl font-semibold mb-3 text-center">Welcome User</h2>
+          <div>
+            <label for="username" class="block mb-1 font-medium"
+              >Username</label
+            >
+            <input
+              type="text"
+              id="username"
+              name="username"
+              placeholder="Enter username"
+              class="w-full p-2 text-purple-800 border round"
+            />
+          </div>
+          <div>
+            <label for="password" class="block mb-1 font-medium"
+              >Password</label
+            >
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Enter your password"
+              class="w-full p-2 text-purple-800 border round"
+            />
+          </div>
+          <button
+            type="submit"
+            class="w-full bg-indigo-500 text-purple-100 px-4 py-4 rounded-md hover:bg-indigo-800 transition-colors"
+          >
+            Login
+          </button>
+        </form>
+        <!-- Login Form End  -->
+      </div>
+    </div>
+    <!-- Main Content Login End-->
+  </body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <title>Generate YouTube Blog Post</title>
+  </head>
+  <body class="flex flex-col min-h-screen bg-green-100 font-sans antialised">
+    <!-- Navbar -->
+    <nav class="bg-indigo-500 p-7 text-purple-200 flex justify-between">
+      <div>
+        <h1 class="3x-l font-bold">AI Blog Generator</h1>
+      </div>
+      <div>
+        <a href="login.html" class="text-purple-100 hover:pointer">Logout</a>
+      </div>
+    </nav>
+    <!-- Navbar End -->
+    <!-- Main Content -->
+    <div class="flex-grow container mx-auto mt-10 px-4 sm:px-0">
+      <div
+        class="max-w-3xl mx-auto bg-gray-100 p-6 rounded shadow-md transition-transform transform hover:scale-105 flex flex-col"
+      >
+        <!-- Introduction -->
+        <div class="text-center text-indigo-500">
+          <h2 class="2x-l font-semibold mb-3">Generate blog post using AI!</h2>
+          <p>
+            Transform YouTube videos into captivating blog posts with this
+            innovative web app: simply paste the video URL, add your insights,
+            and watch as it generates a dynamic blog featuring the video
+            alongside your commentary, perfect for sharing unique perspectives
+            on engaging content
+          </p>
+        </div>
+        <!-- Introduction End-->
+        <br />
+        <!-- Input YouTube Videos -->
+        <div>
+          <h2 class="x-l mb-2 font-semibold mb-3 text-indigo-500">
+            Enter a YouTube Link
+          </h2>
+          <div class="flex space-x-4">
+            <input
+              id="youtubeLink"
+              type="url"
+              placeholder="Paste URL here"
+              class="flex-grow p-2 border border-indigo-500 rounded-l-md"
+            />
+            <button
+              id="generateBlogButton"
+              class="bg-indigo-500 text-purple-200 px-4 py-4 rounded-r-md hover:bg-indigo-800 transition-colors"
+            >
+              Generate
+            </button>
+          </div>
+        </div>
+        <!-- Input YouTube Videos End-->
+        <!-- Loading Circle -->
+        <div
+          style="display: none"
+          id="loading-circle"
+          class="lds-grid grid grid-cols-9 gap-4 content-center"
+        >
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+
+        <!-- Loading Circle End -->
+        <!-- Generated Blog Displayed -->
+        <section class="mt-10 flex-grow">
+          <h2 class="2x-l mb-2 font-semibold mb-3 text-indigo-500">Article</h2>
+          <div id="blogContent" class="mt-2 text-indigo-800 space-y-4">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis
+            inventore iste voluptates id est recusandae suscipit maiores in,
+            expedita sunt modi. Porro animi voluptate possimus. Temporibus
+            quisquam beatae earum quibusdam.
+          </div>
+        </section>
+        <!-- Generated Blog Displayed End-->
+      </div>
+    </div>
+    <!-- Footer -->
+    <footer class="text-purple-600 text-center mb-2 font-semibold">
+      Made with curiosity by
+      <a href="https://github.com/bermudez-creates"><i>@steezy</i></a>
+    </footer>
+  </body>
+</html>

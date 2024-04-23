@@ -74,13 +74,26 @@ WSGI_APPLICATION = 'ai_blog.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'VX1AOuwrEk4Dpqi555rhHPbfqJMdW-3G',
+        'HOST': 'z74443a7f-postgresql.zb20e5e48.qovery.fr',
+        'PORT': '5432',
     }
 }
 
+# postgres:
+# VX1AOuwrEk4Dpqi555rhHPbfqJMdW-3G
+# @z74443a7f-postgresql.zb20e5e48.qovery.fr:5432
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators

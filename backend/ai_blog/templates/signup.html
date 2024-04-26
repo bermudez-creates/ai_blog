@@ -16,7 +16,8 @@
         <h1 class="3x-l font-bold">AI Blog Generator Signup</h1>
       </div>
       <div>
-        <a href="index.html" class="text-purple-100 hover:pointer">Home</a>
+        <a href="login" class="text-purple-100 hover:pointer">Login</a>
+        <a href="/" class="text-purple-100 hover:pointer">Home</a>
       </div>
     </nav>
     <!-- Navbar Signup Page End-->
@@ -25,7 +26,12 @@
     <div class="flex items-center justify-center h-screen">
       <div class="bg-gray-100 p-8 shadow-md rounded-lg max-w-md w-full">
         <!-- Singup Form  -->
-        <form class="space-y-4 text-indigo-500">
+        <form class="space-y-4 text-indigo-500" action="" method="POST">
+          {% csrf_token %} {% if error_message %}
+          <div align="center" style="color: red">
+            <h2>{{error_message}}</h2>
+          </div>
+          {% endif %}
           <h2 class="text-xl font-semibold mb-3 text-center">
             Welcome New User
           </h2>

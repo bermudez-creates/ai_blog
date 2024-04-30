@@ -81,20 +81,33 @@ WSGI_APPLICATION = 'ai_blog.wsgi.application'
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'postgres',
+#         'USER': 'postgres',
+#         'PORT': '5432',
+#     }
+# }
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'PASSWORD': 'VX1AOuwrEk4Dpqi555rhHPbfqJMdW-3G',
-        'HOST': 'z74443a7f-postgresql.zb20e5e48.qovery.fr',
+        'NAME': 'ai_app',
+        'USER': 'root',
+        'PASSWORD': 'd5XB9iSQ50zPyB4oP5a2nwGuwQ0cSx14',
+        'HOST': 'dpg-cooljjm3e1ms73b865ag-a.oregon-postgres.render.com',
         'PORT': '5432',
     }
 }
 
+# daxs://ai-blog.ng2m29.dax-clusters.us-east-2.amazonaws.com
 # postgres:
 # VX1AOuwrEk4Dpqi555rhHPbfqJMdW-3G
 # @z74443a7f-postgresql.zb20e5e48.qovery.fr:5432
+
+# postgres://root:d5XB9iSQ50zPyB4oP5a2nwGuwQ0cSx14@dpg-cooljjm3e1ms73b865ag-a.oregon-postgres.render.com/ai_app
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators

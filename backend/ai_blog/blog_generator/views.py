@@ -38,7 +38,7 @@ def generate_blog(request):
   
       # Get transcript
     transciption = get_transcription(yt_link)
-    print(transciption)
+    print(f"Start transcript...")
     if not transciption:
       return JsonResponse({'error': "Failure getting YouTube link"}, status = 500)
    
@@ -66,14 +66,14 @@ def download_audio(link):
 
 def get_transcription(link):
   audio_file = download_audio(link)
- # aai.settings.api_key
+  aai.settings.api_key = ""
   transcriber = aai.Transcriber()
 
   transcript = transcriber.transcribe(audio_file)
   return transcript.text
 
 def generate_blog_from_transcription(transcription):
- # openai.api_key
+  openai.api_key = ""
 
   prompt = f"Based on the following video transcript turn it into an Engaging Blog. Craft compelling content from YouTube conversations:\n\n{transcription}\n\nArticle:"
   response =openai.completions.create(
@@ -83,7 +83,6 @@ def generate_blog_from_transcription(transcription):
   )
 
   generated_content = response.choices[0].text.strip()
-  print(f"Generating blog {generate_blog_from_transcription}")
   return generated_content
 
 def user_login(request):

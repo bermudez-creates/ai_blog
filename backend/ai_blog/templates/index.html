@@ -10,43 +10,78 @@
     />
     <!-- <link rel="stylesheet" href="index.css" /> -->
     <style>
-      @keyframes rotate {
-        from {
-          transform: rotate(0deg);
-        }
-        to {
-          transform: rotate(360deg);
-        }
+      .lds-grid,
+      .lds-grid div {
+        box-sizing: border-box;
       }
-
-      @-webkit-keyframes rotate {
-        from {
-          -webkit-transform: rotate(0deg);
-        }
-        to {
-          -webkit-transform: rotate(360deg);
-        }
+      .lds-grid {
+        display: inline-block;
+        position: relative;
+        width: 80px;
+        height: 80px;
+        margin: 20px auto 0;
       }
-
-      .load {
-        width: 100px;
-        height: 100px;
-        margin: 110px auto 0;
-        border: solid 10px #8822aa;
+      .lds-grid div {
+        position: absolute;
+        width: 16px;
+        height: 16px;
         border-radius: 50%;
-        border-right-color: transparent;
-        border-bottom-color: transparent;
-        -webkit-transition: all 0.5s ease-in;
-        -webkit-animation-name: rotate;
-        -webkit-animation-duration: 1s;
-        -webkit-animation-iteration-count: infinite;
-        -webkit-animation-timing-function: linear;
-
-        transition: all 0.5s ease-in;
-        animation-name: rotate;
-        animation-duration: 1s;
-        animation-iteration-count: infinite;
-        animation-timing-function: linear;
+        background: currentColor;
+        animation: lds-grid 1.2s linear infinite;
+      }
+      .lds-grid div:nth-child(1) {
+        top: 8px;
+        left: 8px;
+        animation-delay: 0s;
+      }
+      .lds-grid div:nth-child(2) {
+        top: 8px;
+        left: 32px;
+        animation-delay: -0.4s;
+      }
+      .lds-grid div:nth-child(3) {
+        top: 8px;
+        left: 56px;
+        animation-delay: -0.8s;
+      }
+      .lds-grid div:nth-child(4) {
+        top: 32px;
+        left: 8px;
+        animation-delay: -0.4s;
+      }
+      .lds-grid div:nth-child(5) {
+        top: 32px;
+        left: 32px;
+        animation-delay: -0.8s;
+      }
+      .lds-grid div:nth-child(6) {
+        top: 32px;
+        left: 56px;
+        animation-delay: -1.2s;
+      }
+      .lds-grid div:nth-child(7) {
+        top: 56px;
+        left: 8px;
+        animation-delay: -0.8s;
+      }
+      .lds-grid div:nth-child(8) {
+        top: 56px;
+        left: 32px;
+        animation-delay: -1.2s;
+      }
+      .lds-grid div:nth-child(9) {
+        top: 56px;
+        left: 56px;
+        animation-delay: -1.6s;
+      }
+      @keyframes lds-grid {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.5;
+        }
       }
     </style>
     <title>Generate YouTube Blog Post</title>
@@ -102,7 +137,23 @@
         </div>
         <!-- Input YouTube Videos End-->
         <!-- Loading Circle -->
-        <div style="display: none" id="loading-circle" class="load"></div>
+        <!-- <div style="display: none" id="loading-circle" class="load"></div> -->
+
+        <div
+          style="display: none"
+          id="loading-circle"
+          class="lds-grid grid grid-cols-9 gap-4 content-center"
+        >
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
 
         <!-- Loading Circle End -->
         <!-- Generated Blog Displayed -->

@@ -21,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-vt!f(%w7bks5v^cqw@^t3lh-i-#7k0-22c)7&z#ij8%le0wq+y'
+SECRET_KEY = ''
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -82,32 +82,7 @@ WSGI_APPLICATION = 'ai_blog.wsgi.application'
 #     }
 # }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'postgres',
-#         'USER': 'postgres',
-#         'PORT': '5432',
-#     }
-# }
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'ai_app',
-        'USER': 'root',
-        'PASSWORD': 'd5XB9iSQ50zPyB4oP5a2nwGuwQ0cSx14',
-        'HOST': 'dpg-cooljjm3e1ms73b865ag-a.oregon-postgres.render.com',
-        'PORT': '5432',
-    }
-}
-
-# daxs://ai-blog.ng2m29.dax-clusters.us-east-2.amazonaws.com
-# postgres:
-# VX1AOuwrEk4Dpqi555rhHPbfqJMdW-3G
-# @z74443a7f-postgresql.zb20e5e48.qovery.fr:5432
-
-# postgres://root:d5XB9iSQ50zPyB4oP5a2nwGuwQ0cSx14@dpg-cooljjm3e1ms73b865ag-a.oregon-postgres.render.com/ai_app
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators

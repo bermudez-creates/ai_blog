@@ -11,11 +11,8 @@ import os
 from pytube import YouTube
 import assemblyai as aai
 import openai
+from .models import BlogPost
 
-def yt_title(link):
-  yt = YouTube(link)
-  title = yt.title
-  return title  
 # Create your views here.
 @login_required
 def index(request):
@@ -47,13 +44,26 @@ def generate_blog(request):
   
     if not blog_content:
       return JsonResponse({'error': "Failed to generate blog article"}, status = 500)
+    
       # Save blog to database
-
+    new_blog_article = BlogPost.objects.create(
+      user= request.user,
+      youtube_title= title,
+      youtube_link= yt_link,
+      generated_content= blog_content
+    )
+    print(f"Saving blog to database")
+    new_blog_article.save()
       # Return blog as response
     return JsonResponse({'content': blog_content})
   else:
     return JsonResponse({'error': 'Invalid'}, status = 405)
   
+
+def yt_title(link):
+  yt = YouTube(link)
+  title = yt.title
+  return title  
 
 def download_audio(link):
   yt =YouTube(link)
@@ -98,6 +108,17 @@ def user_login(request):
       error_message = 'Invalid credentials'
       return render(request, 'login.html', {'error_message': error_message})
   return render(request, 'login.html')
+
+def blog_list(request):
+  blog_articles = BlogPost.objects.filter(user=request.user)
+  return render(request, 'blogs.html' , {'blog_articles': blog_articles})
+
+def blog_details(request, pk):
+  blog_article_detail = BlogPost.objects.get(id=pk)
+  if request.user == blog_article_detail.user:
+    return render(request, 'details.html', {'blog_article_detail': blog_article_detail})
+  else:
+    return redirect('/')
 
 def user_signup(request):
   if request.method == "POST":
